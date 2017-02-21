@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/alineEvolt/evolt/issues"
   },
-  "homepage": "https://github.com/alineEvolt/evolt#readme"
+  "homepage": "https://github.com/alineEvolt/evolt#readme",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1"
+  }
 }
