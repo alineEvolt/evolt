@@ -2,3 +2,42 @@
 /* ==FOOTER                  */
 /* ----------------------------- */
 
+#footer {
+	background: $delta-color;
+	font-family: $font-stack-headings;
+	font-weight: 300;
+	padding: $extra-large-value 0;
+	p, li, a {
+		color: $alpha-color;
+		margin: 0;
+		line-height: 1;
+	}
+	.copyright {
+		font-size: 1.2rem;
+	}
+	.copyright, .social {
+		margin-top: $large-value;
+	}
+	.contact {
+		font-size: 2.2rem;
+	}
+	.social {
+		li {
+			margin-left: 3rem;
+		}
+	}
+}
+
+.social {
+	list-style-type: none;
+	list-style-position: outside;
+	marign: 0;
+	padding: 0;
+	display: inline-flex;
+	flex-wrap: nowrap;
+	text-align: right;
+	li {
+		align-self: flex-end;
+		margin-left: 3rem;
+	}
+}

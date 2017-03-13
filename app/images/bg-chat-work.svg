@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1000px" height="626px" viewBox="0 0 1000 626" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop HD</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50.6136205%" y1="104.551793%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#F4F6F7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-299.000000, -6488.000000)">
+            <polygon id="Rectangle-10" fill="url(#linearGradient-1)" points="-156.425781 7089.21484 1676 6851 1676 8935 -148 8935"></polygon>
+            <rect id="Rectangle-7" fill="#F0F2F9" transform="translate(1203.871137, 6705.595014) rotate(-6.000000) translate(-1203.871137, -6705.595014) " x="705.871137" y="6621.59501" width="996" height="168"></rect>
+            <rect id="Rectangle-7" fill="#F3D314" transform="translate(1123.215560, 6878.978529) rotate(-6.000000) translate(-1123.215560, -6878.978529) " x="611.979788" y="6794.97853" width="1022.47154" height="168"></rect>
+            <rect id="Rectangle-7" fill="#D9E4EC" transform="translate(544.627901, 6939.898646) rotate(-6.000000) translate(-544.627901, -6939.898646) " x="-80.644919" y="6855.89865" width="1250.54564" height="168"></rect>
+            <g id="Group-5" transform="translate(299.000000, 6488.000000)">
+                <rect id="Rectangle-6" fill="#FBFBFB" x="-1.13686838e-13" y="24" width="1000" height="600" rx="5"></rect>
+                <rect id="Rectangle-6" fill="#E6E7E8" x="0" y="0" width="1000" height="25" rx="5"></rect>
+                <circle id="Oval-5" fill="#FFFFFF" cx="16.5" cy="12.5" r="5.5"></circle>
+                <circle id="Oval-5" fill="#FFFFFF" opacity="0.503793025" cx="33.5" cy="12.5" r="5.5"></circle>
+                <circle id="Oval-5" fill="#FFFFFF" opacity="0.299535779" cx="50.5" cy="12.5" r="5.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

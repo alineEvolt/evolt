@@ -30,7 +30,7 @@ body {
 }
 
 a {
-  color: $theta-color;
+  color: $base-color;
   text-decoration: none;
   &:hover, &:focus, &:active {
     text-decoration: underline;
@@ -73,6 +73,7 @@ figure {
   line-height: $line-height;
 }
 
+
 h1, .#{$kna-namespace}h1-like {
   font-size: $h1-size;
   font-family: $font-stack-headings;
@@ -81,11 +82,16 @@ h1, .#{$kna-namespace}h1-like {
 h2, .#{$kna-namespace}h2-like {
   font-size: $h2-size;
   font-family: $font-stack-headings;
+  margin-bottom: 5rem;
+  font-weight: 500 !important;
+  line-height: 1.5;
 }
 
 h3, .#{$kna-namespace}h3-like {
   font-size: $h3-size;
   font-family: $font-stack-headings;
+  margin-bottom: 2.2rem;
+  font-weight: 400;
 }
 
 h4, .#{$kna-namespace}h4-like {
@@ -166,7 +172,23 @@ h6,
 .#{$kna-namespace}h6-like {
   &:first-child {
     margin-top: 0;
+    font-weight: 400;
   }
+}
+
+h1,
+.#{$kna-namespace}h1-like,
+h2,
+.#{$kna-namespace}h2-like,
+h3,
+.#{$kna-namespace}h3-like,
+h4,
+.#{$kna-namespace}h4-like,
+h5,
+.#{$kna-namespace}h5-like,
+h6,
+.#{$kna-namespace}h6-like {
+  color: $delta-color;
 }
 
 /* avoid margins on nested elements */
@@ -194,4 +216,13 @@ svg {
 
 img {
   height: auto;
+}
+
+::-moz-selection {
+  background: $yellow;
+  color: $base-color;
+}
+::selection {
+  background: $yellow;
+  color: $base-color;
 }

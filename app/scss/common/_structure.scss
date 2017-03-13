@@ -1,3 +1,122 @@
 /* ----------------------------- */
 /* ==STRUCTURE                  */
 /* ----------------------------- */
+
+.wrapper {
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+
+	@media (min-width: $large) {
+		max-width: 1200px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+#main {
+	min-height: 90vh;
+}
+
+
+.big-text {
+  font-size: $h3-size;
+  font-weight: 300;
+  color: $epsilon-color;
+  margin-bottom: $large-value;
+  padding-top: $medium-value;
+}
+.big-text-noir {
+  font-family: $font-stack-headings;
+  font-size: 2rem;
+  font-weight: 500 !important;
+  color: $delta-color;
+  margin-bottom: 4rem;
+}
+
+main {
+  p {
+    margin-bottom: 5rem;
+    /*&:nth-child(1):not(.big-text) {
+      margin-bottom: 0;
+    }*/
+  }
+  h2 {
+    text-align: center;
+  }
+}
+
+blockquote {
+  border-left: 4px solid $yellow;
+  padding: 0 0 0 5rem;
+  margin: $extra-large-value 0;
+  &:before, p {
+    display: inline-block;
+    vertical-align: top;
+  }
+  &:before {
+    color: $base-color;
+    font-family: $font-stack-common;
+    font-size: $h2-size;
+    font-weight: 300;
+    position: relative;
+    padding-right: 1rem;
+  }
+  p {
+    color: $base-color;
+    font-family: $font-stack-common;
+    font-size: $h2-size;
+    font-weight: 200;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+    position: relative;
+    font-weight:300;
+    width: 94%;
+    &:nth-last-child(1):after {
+      content:'\201d';
+      color: $base-color;
+      font-family: $font-stack-common;
+      font-size: $h2-size;
+      font-weight: 200;
+      font-style: italic;
+      position: absolute;
+      padding-left: 10px
+
+    }
+  }
+}
+
+figure, .wp-caption {
+	margin-bottom: $large-plus-value;
+	figcaption, .wp-caption-text {
+		color: $zeta-color;
+		font-family: $font-stack-headings;
+		font-size: 1.4rem;
+		font-weight: 300;
+		text-align: center;
+	}
+}
+
+main ol {
+  padding-left: 1em;
+  li {
+    padding-left: 1rem;
+  }
+}
+
+main li {
+  margin-bottom:3rem;
+}
+
+.pl10 {
+  padding-left: 10%;
+}
+.pr10 {
+  padding-right: 10%;
+}
+.marginauto {
+  margin: auto;
+}

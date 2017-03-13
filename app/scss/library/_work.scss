@@ -1,0 +1,157 @@
+/* ----------------------------- */
+/* ==Content work                */
+/* ----------------------------- */
+
+/*		@header
+---------------------------------------*/
+
+.hentry { margin: 0; }
+
+.single-work {
+
+	article {
+		padding-top: 7rem;
+		header {
+			height: 50rem;
+			width: 100%;
+
+			.wrapper, .flex-container {
+				height: 100%;
+			}
+			.flex-container > div {
+				margin: auto;
+			}
+
+			.accr, h1 {
+				font-family: $font-stack-headings;
+			}
+			.accr {
+				color: $delta-color;
+				font-size: 4.5rem;
+				font-weight: 500;
+				line-height: 1.4;
+				margin: 0;
+			}
+
+			h1 {
+				font-size: 2.2rem;
+				line-height: 1;
+				font-weight: 400;
+			}
+		}
+
+		.body {
+			padding-top: $extra-large-value;
+
+			.approche {
+				h2 {
+					font-size: $h3-size;
+					font-weight: 400 !important;
+					margin-bottom: 2.5rem;
+					text-align: left;
+				}
+
+				padding-bottom: $extra-large-value;
+			}
+
+			.inner {
+				background: #fcfcff; /* Old browsers */
+				background: -moz-linear-gradient(top, #fcfcff 0%, #ffffff 15%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, #fcfcff 0%, #ffffff 15%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, #fcfcff 0%, #ffffff 15%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			}
+		}
+
+		.section {
+			position: relative;
+			width: 100%;
+			padding: 7rem 0 4rem;
+
+			* {
+				z-index: 10;
+			}
+
+			.bkg_part {
+				position: absolute;
+				z-index: 0;
+			}
+		}
+
+	}
+
+	.footer {
+		width: 100%;
+		position: relative;
+
+		.inner {
+			width: 100%;
+			height: 100%;
+
+			&.innerPos {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+		}
+
+		.bkgImg {
+			width: 100%;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.content {
+			padding-top: 9rem;
+			.wrapper {
+				overflow: hidden;
+			}
+		}
+
+		.footer-nav {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			.bg-nav {
+				background: $alpha-color;
+				padding: 6.5rem 4rem 6rem 7rem;
+				.bloc {
+					margin: auto 0;
+					p {
+						font-family: $font-stack-headings;
+						font-weight: 400;
+						font-size: 1.7rem;
+						margin: 0;
+						a {
+							transition: color 0.3s ease;
+							&:hover, &:focus {
+								color: #05060F;
+								text-decoration: none;
+							}
+						}
+						.next {
+							font-size: 4.5rem;
+							font-weight: 500;
+						}
+						&.link {
+							font-size: 1.4rem;
+							font-weight: 500;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.imgFull {
+	height: auto;
+	max-width: 100%;
+	text-align: center;
+}
+

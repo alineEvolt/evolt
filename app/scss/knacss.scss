@@ -33,7 +33,7 @@
 @import "_config/_variables.scss";
 @import "_config/_breakpoints.scss";
 @import "_config/_mixins.scss";
-
+@import "_config/_fonts.scss";
 // Libraries
 @import "library/_base.scss"; // basic styles
 @import "library/_print.scss"; // print quick reset
@@ -62,6 +62,9 @@
 
 //modules
 @import "library/_home.scss"; //homepage
+@import "library/_work.scss"; //work
+@import "library/_sliders.scss"; //work
+
 
 
 /* ----------------------------- */
