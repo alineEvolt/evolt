@@ -2,10 +2,11 @@
 /* ==STRUCTURE                  */
 /* ----------------------------- */
 
+
 .wrapper {
 	margin: 0 auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 2rem;
+	padding-right: 2rem;
 	width: 100%;
 
 	@media (min-width: $large) {
@@ -34,24 +35,50 @@
   font-weight: 500 !important;
   color: $delta-color;
   margin-bottom: 4rem;
+ @media ( max-width: ( $small - 1 ) ) {
+    margin-top: 2rem;
+  }
+
+  @media ( min-width: $small ) {
+    margin-top: 3.5rem;
+  }
 }
 
 main {
-  p {
-    margin-bottom: 5rem;
-    /*&:nth-child(1):not(.big-text) {
-      margin-bottom: 0;
-    }*/
+  p, li {
+    margin: 0;
+    @media ( max-width: ( $small - 1 ) ) {
+      &.like-h2, &:nth-last-child(1) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media ( min-width: $small ) {
+      &.like-h2, &:nth-last-child(1) {
+        margin-bottom: 3.5rem;
+      }
+    }
   }
   h2 {
     text-align: center;
+  }
+
+  figure, .wp-caption {
+    max-width: 100% !important;
+    width: auto !important;
+    @media ( max-width: ( $small - 1 ) ) {
+      margin: 0 0 2rem;
+    }
+
+    @media ( min-width: $small ) {
+      margin: 0 0 4rem;
+    }
   }
 }
 
 blockquote {
   border-left: 4px solid $yellow;
-  padding: 0 0 0 5rem;
-  margin: $extra-large-value 0;
+  padding: 0 0 0 2.5rem;
   &:before, p {
     display: inline-block;
     vertical-align: top;
@@ -59,7 +86,6 @@ blockquote {
   &:before {
     color: $base-color;
     font-family: $font-stack-common;
-    font-size: $h2-size;
     font-weight: 300;
     position: relative;
     padding-right: 1rem;
@@ -67,26 +93,57 @@ blockquote {
   p {
     color: $base-color;
     font-family: $font-stack-common;
-    font-size: $h2-size;
-    font-weight: 200;
+    font-size: 2.5rem;
     font-style: italic;
+    font-weight: 300 !important;
     line-height: 1.4;
-    margin: 0;
+    margin: 0 !important;
     position: relative;
     font-weight:300;
     width: 94%;
+    @media (max-width: $tiny) {
+      font-size: 1.8rem;
+    }
     &:nth-last-child(1):after {
       content:'\201d';
       color: $base-color;
       font-family: $font-stack-common;
-      font-size: $h2-size;
       font-weight: 200;
       font-style: italic;
       position: absolute;
-      padding-left: 10px
+      padding-left: 10px;
 
     }
   }
+
+  @media ( max-width: ( $small - 1 ) ) {
+    margin: $medium-plus-value 0;
+    &:before {
+      padding-right: 0;
+      font-size: $h3-size;
+    }
+    p {
+      //font-size: $h3-size;
+      &:nth-last-child(1):after {
+         font-size: $h3-size;
+      }
+    }
+  }
+
+  @media ( min-width: $small ) {
+    margin: $extra-large-value 0;
+    &:before {
+      padding-right: 1rem;
+      font-size: $h2-size;
+    }
+    p {
+      //font-size: $h2-size;
+      &:nth-last-child(1):after {
+        font-size: $h2-size;
+      }
+    }
+  }
+
 }
 
 figure, .wp-caption {
@@ -108,15 +165,280 @@ main ol {
 }
 
 main li {
-  margin-bottom:3rem;
+  margin-bottom:0;
 }
 
-.pl10 {
-  padding-left: 10%;
+@media (min-width: ($small + 1)) {
+
+  .pl10 {
+    padding-left: 4%;
+  }
+  .pr10 {
+    padding-right: 4%;
+  }
+
 }
-.pr10 {
-  padding-right: 10%;
-}
+
 .marginauto {
-  margin: auto;
+  margin: auto !important;
+}
+
+p.link {
+  font-family: $font-stack-headings;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  a {
+    color: #0036FF;
+    transition: color .3s ease;
+    &:hover, &:focus {
+      color: $delta-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+#main h2.small-cap {
+  margin: 0;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: $medium) {
+  .w45 {
+    width: 65%;
+  }
+}
+@media (min-width: ($medium + 1)) {
+  .w45 {
+    width: 45%;
+  }
+}
+
+.posrel { position: relative; }
+
+.nicescroll-rails {
+  z-index: 1000 !important;
+}
+
+
+
+
+/*
+@media (max-width: $tiny) {
+
+  .pos_top_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .pos_bottom_right {
+    &, &.mediumw50 {
+      position: absolute;
+      bottom: 65px;
+      right: 30px;
+      max-width: 200px;
+    }
+  }
+}
+*/
+
+@media (min-width: $tiny) and (max-width: ($small - 1)) {
+
+  .pos_top_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .middlew50 {
+    &, img {
+      width: 50%;
+      height: auto;
+    }
+  }
+  .pos_bottom_right {
+    &, &.mediumw50 {
+      position: absolute;
+      bottom: 95px;
+      right: 265px;
+      max-width: 250px;
+    }
+  }
+}
+@media (min-width: ($tiny + 1)) and (max-width: ($small - 1 )) and (orientation: landscape) {
+  .pos_top_left {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .middlew50 {
+    &, img {
+      width: 220px !important;
+      height: auto;
+    }
+  }
+  .pos_bottom_right {
+    &, &.mediumw50 {
+      position: absolute;
+      bottom: auto;
+      top: -2.5rem;
+      right: 45px;
+      max-width: 220px;
+    }
+  }
+}
+@media (min-width: $small) and (max-width: $medium) and (orientation: portrait) {
+
+  .middlew50 {
+    &, img {
+      width: 60%;
+      height: auto;
+    }
+  }
+
+  .pos_top_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .pos_bottom_right {
+    &, &.mediumw50 {
+      position: absolute;
+      bottom: -15px;
+      right: 100px;
+      max-width: 300px;
+      z-index: 100 !important;
+    }
+  }
+}
+
+@media (min-width: $small) and (max-width: $medium) and (orientation: landscape) {
+  .middlew50 {
+    &, img {
+      width: 60%;
+      height: auto;
+    }
+  }
+  .pos_bottom_right{
+    &, &.mediumw50 {
+      position: absolute;
+      bottom: 0;
+      right: 275px;
+      max-width: 280px;
+    }
+  }
+}
+@media (min-width: ($medium + 1)) {
+  .pos_bottom_right{
+    max-width: 50%;
+    &, &.mediumw50 {
+      position: absolute;
+      bottom: -70px;
+      right: 78px;
+    }
+  }
+}
+
+
+@media (min-width: ($tiny + 1)) and (max-width: ($small - 1 )) {
+  .ml-s, img.ml-s {
+    margin-left: -50px;
+    + .wp-caption-text {
+      margin-left: -300px;
+    }
+  }
+}
+
+@media (min-width: ($tiny + 1)) and (max-width: ($small - 1 )) and (orientation: landscape) {
+  main figure, main .wp-caption {
+    width: 220px !important;
+    img {
+      width: 100% !important;
+    }
+  }
+  .ml-s, img.ml-s {
+    margin-left: 0;
+    + .wp-caption-text {
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+}
+@media (min-width: $small) and (max-width: $medium) and (orientation: portrait) {
+  .ml-s, img.ml-s {
+    margin-left: -20px;
+    margin-top: 50px;
+    + .wp-caption-text {
+      margin-left: -272px;
+    }
+  }
+  .small-w75 {
+    &.push, .push, div {
+      margin-left: 0 !important;
+      .alignright {
+        float: none;
+      }
+    }
+  }
+}
+@media (min-width: $small) and (max-width: $medium) and (orientation: landscape) {
+  .ml-s, img.ml-s {
+    margin-left: -30px;
+    + .wp-caption-text {
+      margin-left: -272px;
+    }
+  }
+}
+@media (min-width: ($medium + 1 )) {
+  .ml-s {
+    max-width: 50%;
+  }
+  .ml-s, img.ml-s {
+    + .wp-caption-text {
+      margin-left: -252px;
+    }
+  }
+}
+
+.mt2 {
+  margin-top: 3rem !important;
+}
+
+.single-work .smallMarge {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: $tiny) {
+  .bkg_part {
+    height: 100% !important;
+    width: 100% !important;
+    bottom: auto !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+  }
+}
+
+.section > div:not(.bkg_part) {
+  position: relative;
+  z-index: 10;
+}
+
+#cookie-notice .button {
+  font-family: $font-stack-headings;
+  color: #0036FF;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .2s ease;
+  &:hover, &:focus {
+    color: #05060F;
+  }
 }

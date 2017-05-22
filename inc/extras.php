@@ -41,13 +41,28 @@ add_action( 'wp_head', 'evolt_pingback_header' );
 //Ajout des options du thème [ACF]
 if( function_exists('acf_add_options_page') ) {
 
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme Options',
-		'menu_title'	=> 'Theme Options',
-		'menu_slug' 	=> 'theme-options',
-		'capability'	=> 'edit_posts',
-		'parent_slug'	=> '',
-		'position'		=> false,
-		'icon_url'		=> false,
-	));
+	// Main Theme Settings Page
+  $parent = acf_add_options_page( array(
+    'page_title' => 'Theme General Settings',
+    'menu_title' => 'Theme Settings',
+    'redirect'   => 'Theme Settings',
+  ) );
+
+  $languages = array( 'fr', 'en' );
+  foreach ( $languages as $lang ) {
+    acf_add_options_sub_page( array(
+      'page_title' => 'Options (' . strtoupper( $lang ) . ')',
+      'menu_title' => __('Options (' . strtoupper( $lang ) . ')', 'text-domain'),
+      'menu_slug'  => "options-${lang}",
+      'post_id'    => $lang,
+      'parent'     => $parent['menu_slug']
+    ) );
+  }
 }
+
+// REMOVE WP EMOJI
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );

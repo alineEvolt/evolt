@@ -11,10 +11,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="header" style="background: url(<?php the_field('bkg_head_cs'); ?>) no-repeat 50% 100% / 100% auto;" data-rjs="3">
+	<header class="header" style="background: url(<?php the_field('bkg_head_cs'); ?>) no-repeat 50% 100%;">
 		<div class="wrapper">
 			<div class="flex-container flex-container-v">
-				<div class="w80 tiny-w100">
+				<div class="w90 tiny-w100">
 					<h1><?php the_title(); ?></h1>
 					<p class="accr"><?php the_field('accroche_cs'); ?></p>
 				</div>
@@ -28,11 +28,11 @@
 
 			echo '<div class="approche wrapper">';
 			echo '<div class="flex-container">';
-			echo '<div class="w80 center tiny-w100 small-w100">';
+			echo '<div class="w90 center tiny-w100">';
 			echo '<div class="flex-container has-gutter-xl">';
 			while ( have_rows('challenge_cs') ) : the_row();
 		?>
-			<div class="w40 tiny-w100 <?php echo (++$j % 2 == 0) ? 'push' : ''; ?> small-w75">
+			<div class="w40 tiny-w100 <?php echo (++$j % 2 == 0) ? 'push' : ''; ?>">
 				<?php the_sub_field('col_intro_cs'); ?>
 			</div>
 		<?php
@@ -85,10 +85,6 @@
         	$widthBkg = get_sub_field('larg_sous_sec_v2_cs');
         	$heightBkg = get_sub_field('haut_sous_sec_v2_cs');
         	$addImg = get_sub_field('add_img_sous_sec_v2_cs');
-        	$noAnim = get_sub_field('no_anim_bkg_cs');
-      	if( $noAnim == 1 ) {
-      		$bkgAnim = 'no_anim';
-      	}
 
         	if( $ancBloc === 'top_left' ) {
         		$posBloc = 'top: ' . $posTopBloc . '%; left: ' . $posLeftBloc . '%;';
@@ -104,15 +100,15 @@
         	}
 
         	if( $addImg ) {
-        		echo '<div class="section"><div class="bkg_part ' . $bkgAnim . '" style="' . $bkgColor . ' ' . $posBloc . ' height: ' . $heightBkg . '%;' . $bkgImg . ' ' . $bkgPos . ' ' . $bkgSize . ' background-repeat: no-repeat;" data-width="' . $widthBkg . '%" data-rjs="3"></div>';
+        		echo '<div class="section"><div class="bkg_part" style="' . $bkgColor . ' ' . $posBloc . ' height: ' . $heightBkg . '%; width: ' . $widthBkg . '%; ' . $bkgImg . ' ' . $bkgPos . ' ' . $bkgSize . ' background-repeat: no-repeat;"></div>';
         	} else {
-        		echo '<div class="section"><div class="bkg_part ' . $bkgAnim . '" style="' . $bkgColor . ' ' . $posBloc . ' height: ' . $heightBkg . '%;" data-width="' . $widthBkg . '%" data-rjs="3"></div>';
+        		echo '<div class="section"><div class="bkg_part" style="' . $bkgColor . ' ' . $posBloc . ' height: ' . $heightBkg . '%; width: ' . $widthBkg . '%;"></div>';
         	}
 
         } else {
         	$addImg = get_sub_field('add_img_sous_sec_v2_cs');
         	if( $addImg ) {
-        		echo '<div class="section" style="' . $bkgColor . ' ' . $bkgImg . ' ' . $bkgPos . ' ' . $bkgSize . ' background-repeat: no-repeat;" data-rjs="3">';
+        		echo '<div class="section" style="' . $bkgColor . ' ' . $bkgImg . ' ' . $bkgPos . ' ' . $bkgSize . ' background-repeat: no-repeat;">';
       		} else {
       			echo '<div class="section" style="' . $bkgColor . '">';
       		}
@@ -136,13 +132,13 @@
 		      				<?php
 		      						if( $nbrCol === 'one_col') :
 
-		      						echo '<div class="w60 center tiny-w100 small-w75">';
+		      						echo '<div class="w70 center tiny-w100">';
 		      						echo $contentBloc;
 		      						echo '</div>';
 
 		      					elseif( $nbrCol === 'two_col') :
 
-		      						echo '<div class="w60 center tiny-w100 small-w75">';
+		      						echo '<div class="w70 center tiny-w100">';
 		      						echo '<div class="grid-2-small-1 has-gutter-xl">';
 		      						echo '<div>';
 		      							echo $contentBloc;
@@ -155,18 +151,18 @@
 
 		      					elseif( $nbrCol === 'one_col_img') :
 
-		      						echo '<div class="w80 center imgFull tiny-w100 small-w75 imganim">';
-		      							echo '<img src="' . $imgBloc1 . '" alt="" data-rjs="3" />';
+		      						echo '<div class="w90 center imgFull tiny-w100">';
+		      							echo '<img src="' . $imgBloc1 . '" alt="" />';
 		      						echo '</div>';
 
 										elseif( $nbrCol === 'two_col_img_left') :
 
-		      						echo '<div class="w80 center tiny-w100 small-w75">';
+		      						echo '<div class="w90 center tiny-w100">';
 		      						echo '<div class="flex-container">';
-		      						echo '<div class="w50 tiny-w100 small-w100 imganim">';
-		      							echo '<img src="' . $imgBloc2 . '" alt="" data-rjs="3" />';
+		      						echo '<div class="w50 tiny-w100">';
+		      							echo '<img src="' . $imgBloc2 . '" alt="" />';
 		      						echo '</div>';
-		      						echo '<div class="w40 pr10 marginauto tiny-w100 small-w100">';
+		      						echo '<div class="w40 pr10 marginauto tiny-w100">';
 		      							echo $contentBlocBis;
 		      						echo '</div>';
 		      						echo '</div>';
@@ -174,13 +170,13 @@
 
 		      					elseif( $nbrCol === 'two_col_img_right') :
 
-		      						echo '<div class="w70 center tiny-w100 small-w75">';
+		      						echo '<div class="w90 center tiny-w100">';
 		      						echo '<div class="flex-container">';
-		      						echo '<div class="w40 pl10 marginauto tiny-w100 small-w100">';
+		      						echo '<div class="w40 pl10 marginauto tiny-w100">';
 		      							echo $contentBloc;
 		      						echo '</div>';
-		      						echo '<div class="w50 push tiny-w100 small-w100 imganim">';
-		      							echo '<img src="' . $imgBloc1 . '" alt="" data-rjs="3" />';
+		      						echo '<div class="w50 push tiny-w100">';
+		      							echo '<img src="' . $imgBloc1 . '" alt="" />';
 		      						echo '</div>';
 		      						echo '</div>';
 		      						echo '</div>';
@@ -198,19 +194,17 @@
 
 
 			      	if( have_rows('visuels_sfs_cs') ): ?>
-			      		<div class="wrapper_slider">
-				      		<div class="carousel slider_full slider_<?php echo $sliderPos; ?>"" data-flickity='{ "freeScroll": true, "pageDots": false, "prevNextButtons": false, "setGallerySize": false, "imagesLoaded": true, "cellAlign": "<?php echo $sliderPos; ?>" }'>
+			      		<div class="carousel slider_full slider_<?php echo $sliderPos; ?>"" data-flickity='{ "freeScroll": true, "pageDots": false, "prevNextButtons": false, "imagesLoaded": true, "cellAlign": "<?php echo $sliderPos; ?>" }'>
 
-		    					<?php while ( have_rows('visuels_sfs_cs') ) : the_row();
+	    					<?php while ( have_rows('visuels_sfs_cs') ) : the_row();
 
-			    					$visuSfS = get_sub_field('visuel_sfs_cs');
-			    					$urlSfS = $visuSfS['url'];
-			    					$altSfS = $visuSfS['alt'];
+		    					$visuSfS = get_sub_field('visuel_sfs_cs');
+		    					$urlSfS = $visuSfS['url'];
+		    					$altSfS = $visuSfS['alt'];
 
-			    					echo '<img src="' . $urlSfS . '" alt="' . $altSfS .'" data-rjs="3" />';
+		    					echo '<img src="' . $urlSfS . '" alt="' . $altSfS .'" />';
 
-		    					endwhile;
-		    					echo '</div>';
+	    					endwhile;
 	    					echo '</div>';
     					endif;
     					$ajoutDescSlider = get_sub_field('ajout_text_desc_sfs_cs');
@@ -222,8 +216,8 @@
 
 	    						<div class="wrapper">
 	    							<div class="flex-container">
-	    								<div class="w70 center tiny-w100 small-w75">
-	    									<div class="w50 tiny-w100 small-w100">
+	    								<div class="w70 center tiny-w100">
+	    									<div class="w50 tiny-w100">
 	    										<?php echo $descSlider; ?>
 	  										</div>
 	    								</div>
@@ -241,11 +235,11 @@
 
 		      	<div class="wrapper">
   						<div class="flex-container">
-  							<div class="w70 center tiny-w100 small-w75 fullMove">
+  							<div class="w90 center tiny-w100">
   								<?php
   								if( have_rows('visuels_spi_cs') ):
 
-  									echo '<div class="carousel slider_pi '. $sliderType . '">';
+  									echo '<div class="carousel slider_pi '. $sliderType . '" data-flickity>';
 
   									while( have_rows('visuels_spi_cs') ): the_row();
 
@@ -258,7 +252,7 @@
     									$heightPad = $visuPad['sizes'][ $sizePad . '-height' ];
   									?>
 
-  										<img src="<?php echo $urlPad; ?>" alt="<?php echo $altPad; ?>" width="<?php echo $widthPad; ?>" height="<?php echo $heightPad; ?>" data-rjs="3" />
+  										<img src="<?php echo $urlPad; ?>" alt="<?php echo $altPad; ?>" width="<?php echo $widthPad; ?>" height="<?php echo $heightPad; ?>" />
 
   									<?php endwhile;
 
@@ -303,7 +297,7 @@
 
 		      	<div class="flex-container">
 
-		      		<div class="w70 center tiny-w100 small-w75">
+		      		<div class="w90 center tiny-w100">
 			      		<div class="chat_bot">
 			      			<?php
 			      				if( $linkChat ):
@@ -344,7 +338,7 @@
 			echo '<footer class="footer">';
 		endif;
 		if( $bkgImg ) :
-			echo '<div class="bkgImg"><img src="' . $bkgImg . '" alt="" data-rjs="3" /></div>';
+			echo '<div class="bkgImg"><img src="' . $bkgImg . '" alt="" /></div>';
 			echo '<div class="inner innerPos">';
 		else :
 			echo '<div class="inner">';
@@ -353,7 +347,7 @@
 			<div class="content">
 				<div class="wrapper">
 					<div class="flex-container">
-						<div class="w60 center tiny-w100 small-w75">
+						<div class="w70 center tiny-w100">
 							<?php the_field('text_footer_cs'); ?>
 						</div>
 					</div>
@@ -362,13 +356,13 @@
 			<div class="footer-nav">
 				<div class="wrapper">
 					<div class="flex-container">
-						<div class="w60 center bg-nav tiny-w100 small-w75 smallMarge">
+						<div class="w70 center bg-nav tiny-w100">
 						<?php
 							$nextPost = get_next_post_link();
 
 							$nextPost = get_next_post_link('%link', '%title');
 							$postTitle = get_next_post_link('%link', '%title');
-							$postLink = get_next_post_link('%link', '<span>'.  pll__('See case study') . '<span>');
+							$postLink = get_next_post_link('%link', 'See Case Study');
 
 							if( $nextPost === '' ) :
 
@@ -384,7 +378,7 @@
 								if ( $nextWork->have_posts() ) : while ( $nextWork->have_posts() ) : $nextWork->the_post();
 
 									$postTitle = '<a href="' . get_the_permalink() . '" rel="next">' . get_the_title() . '</a>';
-									$postLink = '<a href="' . get_the_permalink() . '" rel="next"><span>'.  pll__('See case study') . '</span></a>';
+									$postLink = '<a href="' . get_the_permalink() . '" rel="next">See Case Study</a>';
 
 									endwhile;
 									wp_reset_postdata();
@@ -393,7 +387,7 @@
 						?>
 							<div class="flex-container">
 								<div class="w50 bloc tiny-w100">
-									<p><?php echo pll__('Next case study'); ?><br />
+									<p>Next case study<br />
 									<span class="next"><?php echo $postTitle; ?></span></p>
 								</div>
 								<div class="w50 txtright bloc tiny-w100">

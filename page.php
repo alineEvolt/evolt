@@ -12,14 +12,22 @@
  * @package evolt
  */
 
-get_header(); ?>
+get_header();
+
+$idContact = pll_get_post(10);
+
+?>
 
 
 			<?php
 			while ( have_posts() ) : the_post();
 
+			if(is_page($idContact)) {
+				get_template_part( 'template-parts/content', 'contact' );
+			} else {
 				get_template_part( 'template-parts/content', 'page' );
-			
+			}
+
 			endwhile; // End of the loop.
 			?>
 

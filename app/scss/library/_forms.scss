@@ -345,7 +345,7 @@
 
       @media only screen
       and (max-width: 640px) {
-        padding: 20px 0;
+        padding: 0;
         width: 100%;
         bottom: -20px;
       }
@@ -1012,12 +1012,28 @@ ul {
 
       background: $theta-color url(../images/navigateur_bar.svg) no-repeat 50% 0 / 100% auto;
       border-radius: 0 0 5px 5px;
-      box-shadow: 0px 50px 70px 0px rgba(0, 0, 0, 0.18);
+      box-shadow: 0px 50px 70px 0px rgba(0, 0, 0, 0.1);
       position: relative;
-      height: 626px;
       padding: 2.3rem;
       margin-top: 6rem;
       margin-bottom: 4rem;
+
+      position: relative;
+      top: 100px;
+      opacity: 0;
+      transition: top .8s ease, opacity .7s ease .1s;
+      &.show {
+        top: 0;
+        opacity: 1;
+      }
+
+      @media ( max-width: ( $small - 1 ) ) {
+        height: 90vh;
+      }
+
+      @media ( min-width: $small ) {
+        height: 626px;
+      }
 
       #chat_form {
         padding-top: 0;

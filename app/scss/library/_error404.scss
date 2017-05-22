@@ -1,0 +1,50 @@
+/* ----------------------------- */
+/* ==ERROR 404                   */
+/* ----------------------------- */
+
+.error404 {
+  #main {
+    padding-top: 7rem;
+    position: relative;
+    height: calc(100vh - 7rem);
+    .slider-404 {
+     width: 100%;
+     height: calc(100vh - 7rem);
+     overflow: hidden;
+      .inner-slider {
+        width: 18070px;
+        height: 1071px;
+        transition: transform 860s linear;
+        &.move {
+          transform: translateX(-10000px);
+        }
+        > div {
+          display: inline-block;
+          height: calc(100vh - 14rem);
+          width: auto;
+          padding-right: 2.3rem;
+          img {
+            height: 100%;
+            width: auto;
+          }
+        }
+
+      }
+    }
+    .container-404 {
+      position: absolute;
+      top: 30vh;
+      left: 0;
+      width: 100%;
+      h1 {
+        margin-bottom: 1.5rem;
+      }
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  #footer {
+    display: none;
+  }
+}

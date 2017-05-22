@@ -1,0 +1,246 @@
+/* ----------------------------- */
+/* ==Content Contact             */
+/* ----------------------------- */
+
+.content-contact {
+	//margin-top: 10%;
+	padding-top: 14.5rem;
+	position: relative;
+	padding-bottom: 0;
+	@media (max-width: $tiny) {
+		padding-top: 8rem;
+	}
+	@media (min-width: ($tiny + 1)) and (max-width: $small) and (orientation: landscape) {
+		padding-top: 4rem;
+	}
+	.bkg_part {
+		background: #F6F7F7;
+		display: block;
+		height: 670px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		z-index: 1;
+		transition: 1.5s width cubic-bezier(.17,.67,.1,1);
+		@media (max-width: $tiny) {
+			top: 20px;
+			height: 80vh;
+		}
+		&.show {
+			width: 85%;
+		}
+	}
+	.wrapper {
+		position: relative;
+		z-index: 10;
+
+		h1 {
+			font-size: 4rem;
+			margin: 0 0 4rem;
+			@media (max-width: $tiny) {
+				font-size: 3rem;
+				line-height: 1.5;
+			}
+		}
+
+		.visuel {
+			max-width: 800px;
+			height: 500px;
+			width: 0;
+			overflow: hidden;
+			position: relative;
+			transition: 1.5s width cubic-bezier(.17,.67,.1,1) 1s;
+			&.show {
+				width: 100%;
+			}
+			img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				max-width: 800px;
+			}
+		}
+
+		.big-text-noir {
+			font-siz: 2.2rem;
+			font-weight: 400 !important;
+			margin: 0;
+		}
+		.info-contact {
+			padding-top: 9rem;
+			padding-bottom: 14rem;
+			@media (max-width: $tiny) {
+				padding-top: 3rem;
+				padding-bottom: 6rem;
+			}
+			@media (min-width: ($tiny + 1)) and (max-width: $small) and (orientation: landscape) {
+				padding-bottom: 4rem;
+			}
+			h2 {
+				font-size: 2.2rem;
+				font-weight: 500;
+				text-align: left;
+				margin-bottom: 2rem;
+			}
+			p {
+				font-size: 1.8rem;
+				line-height: 1.8;
+				&, li, a {
+					color: $base-darker;
+				}
+				a {
+					transition: color .2s ease;
+					&:hover, &:focus {
+						color: $blue;
+						text-decoration: none;
+					}
+				}
+			}
+			.social {
+				list-style-type: none;
+				list-style-position: outside;
+				margin: 0;
+				padding: 0;
+				li {
+					font-size: 1.8rem;
+					line-height: 1.8;
+					margin: 0;
+					padding: 0;
+					a {
+						color: $base-darker;
+						transition: color .2s ease;
+						&:hover, &:focus {
+							color: $blue;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	.form-section {
+		background: #F0F6F9;
+		padding: 10vh 0;
+		position: relative;
+		top: 100px;
+		opacity: 0;
+		transition: top .8s ease .5s, opacity .7s ease .6s;
+		&.show {
+			opacity: 1;
+			top: 0;
+		}
+		h2 {
+			text-align: center;
+			display: block;
+			width: 100%;
+		}
+		.contact-form {
+			background: $alpha-color;
+			padding: 8rem 12rem;
+			@media (max-width: $tiny) {
+				padding: 4rem 0;
+			}
+			@media (min-width: ($tiny + 1)) and (max-width: $small) and (orientation: landscape) {
+				padding: 4rem 5rem;
+			}
+			@media (min-width: $small) and (max-width: $medium) and (orientation: portrait) {
+				padding: 4rem 5rem;
+				.small-w100 {
+					width: 100% !important;
+				}
+			}
+			.wpcf7-form-control-wrap {
+				position: relative;
+				line-height: 4.4rem;
+				margin-bottom: 5.5rem;
+				display: block;
+				&:after {
+					content: '';
+					display: block;
+					height: 1px;
+					width: 0;
+					background: #979797;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					transition: width .8s ease;
+				}
+				&.showB:after {
+					width: 100%;
+				}
+				input {
+					&[type=text], &[type=email], &[type=tel] {
+						border: none;
+						//border-bottom: 1px solid #979797;
+						width: 100%;
+						line-height: 4.4rem;
+						@media (max-width: $tiny) {
+							width: 90%;
+							margin: 0 5% 4rem;
+						}
+					}
+				}
+				textarea {
+					border: none;
+					//border-bottom: 1px solid #979797;
+					font-size: 1.8rem;
+					font-weight: 300;
+					height: 23rem;
+					width: 100%;
+					resize: none;
+					@media (max-width: $tiny) {
+						width: 90%;
+						margin: 0 5% 0;
+					}
+				}
+				textarea, input {
+					font-size: 1.8rem;
+					font-weight: 300;
+					&::-webkit-input-placeholder { color: #A9A9A9 !important; }
+	        &::-moz-input-placeholder { color: #A9A9A9 !important; }
+	        &::-moz-placeholder { color: #A9A9A9 !important; }
+	        &::-ms-input-placeholder { color: #A9A9A9 !important; }
+	        &:focus {
+	        	outline: none;
+	        }
+				}
+			}
+			.submit {
+				input {
+					background: none;
+					border: none;
+					color: $blue;
+					font-size: 1.4rem;
+					font-weight: 500;
+					text-transform: uppercase;
+					font-family: $font-stack-headings;
+					cursor: pointer;
+					transition: color .2s ease;
+					&:hover, &:focus {
+						color: $base-darker;
+					}
+					@media (max-width: $tiny) {
+						margin-left: 3%;
+					}
+				}
+			}
+			span.wpcf7-not-valid-tip {
+				position: absolute;
+				top: 4rem;
+				left: 0;
+				font-size: 1.4rem;
+			}
+		}
+	}
+	p:not(.legende), ul {
+		position: relative;
+		top: 100px;
+		opacity: 0;
+		transition: top .8s ease, opacity .7s ease .1s;
+		&.move {
+			top: 0;
+			opacity: 1;
+		}
+	}
+}

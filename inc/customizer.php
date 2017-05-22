@@ -66,6 +66,47 @@ function fb_mce_before_init( $settings ) {
       )
     ),
     array(
+      'title' => 'Small Titre : h2 (en cap.)',
+      'selector' => 'h2',
+      'classes' => 'small-cap',
+      'styles' => array(
+        'font-size' => '13px',
+        'font-weight' => '500',
+        'text-transform' => 'uppercase',
+        'font-family' => '"Gotham SSm A", "Gotham SSm B"'
+      )
+    ),
+    array(
+      'title' => 'Titre : h1 (Big like homepage)',
+      'selector' => 'h1',
+      'classes' => 'h1-home',
+      'styles' => array(
+        'font-size' => '80px'
+      )
+    ),
+    array(
+      'title' => 'Text intro type h2 (40px)',
+      'selector' => 'p',
+      'classes' => 'like-h2',
+      'styles' => array(
+        'font-size' => '40px',
+        'font-weight' => '500',
+        'font-family' => '"Gotham SSm A", "Gotham SSm B"'
+      )
+    ),
+    array(
+      'title' => 'Lien (Bleu / Cap)',
+      'selector' => 'p',
+      'classes' => 'link',
+      'styles' => array(
+        'font-size' => '14px',
+        'font-weight' => '500',
+        'color' => '#003EFF',
+        'text-transform' => 'uppercase',
+        'font-family' => '"Gotham SSm A", "Gotham SSm B"'
+      )
+    ),
+    array(
       'title' => 'Effet parallax',
       'block' => 'div',
       'classes' => 'parallax',
@@ -78,3 +119,46 @@ function fb_mce_before_init( $settings ) {
   return $settings;
 
 }
+
+//Tradutions de chaînes [Polylang]
+pll_register_string('header', 'Revenir à la page d\'accueil');
+
+pll_register_string('chat', 'Write a message...');
+pll_register_string('chat', 'Send');
+
+pll_register_string('home', 'Things we do well');
+pll_register_string('home', 'View more');
+pll_register_string('home', 'Case studies');
+pll_register_string('home', 'Our work');
+
+pll_register_string('footer', 'Social');
+pll_register_string('footer', 'Contact');
+pll_register_string('footer', 'Legal');
+pll_register_string('footer', 'Contacter évolt');
+pll_register_string('footer', 'Get in touch');
+
+pll_register_string('contact', 'Location');
+pll_register_string('contact', 'Email');
+pll_register_string('contact', 'Follow us');
+
+pll_register_string('Work', 'Project:');
+pll_register_string('Work', 'See case study');
+pll_register_string('Work', 'Next case study');
+pll_register_string('Work', 'Envie de découvrir notre univers graphique ?');
+pll_register_string('Work', 'Explorer');
+
+
+
+//AJAX
+/*add_action( 'wp_ajax_mon_action', 'mon_action' );
+add_action( 'wp_ajax_nopriv_mon_action', 'mon_action' );
+
+function mon_action() {
+
+  $param = $_POST['param'];
+
+  echo $param;
+
+  die();
+}*/
+

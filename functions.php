@@ -42,6 +42,8 @@ function evolt_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('slider_ipad', 900, 586);
+	add_image_size('slider_home', 750, 845);
+	add_image_size('slider_team', 390, 400);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -112,13 +114,14 @@ function evolt_scripts() {
   wp_enqueue_style( 'evolt-styles', get_template_directory_uri() . '/app/css/knacss.css' );
   // end a virer pour le build
 
-  wp_enqueue_script( 'evolt-modernirz', get_template_directory_uri() . '/dist/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js', array("jquery"), '20170227', false );
+  wp_enqueue_script( 'evolt-modernirz', get_template_directory_uri() . '/dist/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js', array("jquery"), '20170522', false );
 
-	wp_enqueue_script( 'evolt-functions', get_template_directory_uri() . '/dist/js/main.min.js', array("jquery"), '20170227', true );
+	wp_enqueue_script( 'evolt-functions', get_template_directory_uri() . '/dist/js/main.min.js', array("jquery"), '20170522', true );
+	wp_localize_script('evolt-functions', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
 
-	//wp_register_script( 'nt-chatjs', get_template_directory_uri() . '/dist/chat/chat.min.js', array("jquery"), '20170227', true );
-	wp_register_script( 'evolt-chatjs', get_template_directory_uri() . '/app/chat/chat.js', array("jquery"), '20170227', true );
+	wp_register_script( 'evolt-chatjs', get_template_directory_uri() . '/dist/chat/chat.min.js', array("jquery"), '20170522', true );
 	wp_localize_script( 'evolt-chatjs', 'chatux_params', array( 'chat_ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

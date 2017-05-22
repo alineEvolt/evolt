@@ -3,41 +3,179 @@
 /* ----------------------------- */
 
 #footer {
-	background: $delta-color;
+	background: $alpha-color;
 	font-family: $font-stack-headings;
 	font-weight: 300;
-	padding: $extra-large-value 0;
+	position: relative;
+	z-index: 100;
+	.txt-left, .txt-right {
+		opacity: 0;
+		position: relative;
+		top: 50px;
+		transition: top .8s ease, opacity .7s ease .1s;
+	}
+	&.show {
+		.txt-left, .txt-right {
+			top: 0;
+			opacity: 1;
+		}
+	}
+	&.text-dark {
+		h2, h3, p, li {
+			color: $delta-color !important;
+		}
+		p.link a {
+			color: #0036ff !important;
+			transition: color .2s ease;
+			&:hover, &:focus {
+				color: $delta-color !important;
+			}
+		}
+	}
+	&.text-white * {
+		color: $alpha-color !important;
+	}
+	@media (max-width: $tiny) {
+		padding: $medium-plus-value 0;
+	}
+	@media (min-width: ($tiny + 1)) {
+		padding: $extra-large-value 0;
+	}
 	p, li, a {
 		color: $alpha-color;
 		margin: 0;
-		line-height: 1;
+		line-height: 1.5;
+		color: $delta-color;
+		@media (max-width: $tiny) {
+			font-size: 1.4rem;
+		}
+		@media (min-width: ($tiny + 1)) {
+			font-size: 1.5rem;
+		}
 	}
-	.copyright {
-		font-size: 1.2rem;
+	.txt-left {
+		@media (max-width: ($small - 1 ) ) {
+			width: 100% !important;
+			margin-bottom: 5rem;
+		}
+		@media (min-width: $small) and (max-width: $medium) and (orientation: portrait) {
+			width: 100% !important;
+			margin-bottom: 5rem;
+		}
+		h3 {
+			font-weight: 400;
+			@media (max-width: $tiny) {
+				font-size: 2.6rem;
+			}
+			@media (min-width: ($tiny + 1)) {
+				font-size: 3rem;
+			}
+		}
+		p {
+			font-size: 1.8rem;
+			@media (max-width: $tiny) {
+				margin-bottom: 1rem;
+			}
+			@media (min-width: ($tiny + 1)) {
+				margin-bottom: 3rem;
+			}
+			@media (max-width: ($small - 1)) {
+				br {
+					display: none;
+				}
+			}
+		}
 	}
-	.copyright, .social {
-		margin-top: $large-value;
+	.txt-right {
+		@media (max-width: ( $small - 1 ) ) {
+			width: 100% !important;
+			.flex-container {
+				flex-direction: row;
+				> div {
+					width: 50%;
+				}
+			}
+		}
+		@media (min-width: $small) and (max-width: $medium) and (orientation: portrait) {
+			width: 100% !important;
+			.flex-container {
+				flex-direction: row;
+				> div {
+					width: 50%;
+				}
+			}
+		}
+		li, p {
+			line-height: 2;
+		}
+		h3 {
+			font-size: 1.7rem;
+			margin: 0;
+		}
+		a {
+			&:hover, &:focus {
+	      color: #0036FF;
+	      text-decoration: none;
+	    }
+		}
+		.social {
+			list-style-type: none;
+			list-style-position: outside;
+			margin: 0;
+			padding: 0;
+			li {
+				a {
+					transition: color .3s ease;
+					&:hover, &:focus {
+					 color: #0036FF;
+					 text-decoration: none;
+				 	}
+				}
+			}
+		}
 	}
-	.contact {
-		font-size: 2.2rem;
+	p.link {
+	  font-family: $font-stack-headings;
+	  font-size: 1.4rem;
+	  font-weight: 500;
+	  text-transform: uppercase;
+	  margin-top: 1rem;
+	  margin-bottom: 0;
+	  a {
+	    color: #0036FF;
+	    transition: color .3s ease;
+	    &:hover, &:focus {
+	      color: $delta-color;
+	      text-decoration: none;
+	    }
+	  }
 	}
-	.social {
-		li {
-			margin-left: 3rem;
+}
+
+.home {
+	#footer {
+		background: $alpha-color;
+		p, li, a {
+			color: $delta-color;
+		}
+	}
+}
+#footer {
+	&.white {
+		background: $alpha-color;
+		p, li, a {
+			color: $delta-color;
 		}
 	}
 }
 
-.social {
-	list-style-type: none;
-	list-style-position: outside;
-	marign: 0;
-	padding: 0;
-	display: inline-flex;
-	flex-wrap: nowrap;
-	text-align: right;
-	li {
-		align-self: flex-end;
-		margin-left: 3rem;
-	}
+
+#overlay {
+	position: fixed;
+	height: 100%;
+	height: 100vh;
+	width: 100%;
+	background: rgba(6,6,6,.8);
+	display: none;
+	z-index: 99;
 }

@@ -24168,9 +24168,11 @@ jQuery(function($) {
           $('#' + question_name + ' .input_text_text').keydown(function(event){
               var keyCode = (event.keyCode ? event.keyCode : event.which);
               if (keyCode == 13) {
-                  $('#' + question_name).find('a.submit_input').trigger('click');
-                  $('#' + question_name).find('a.submit_input').blur();
-              }
+                $('#' + question_name).find('a.submit_input').trigger('click');
+                $('#' + question_name).find('a.submit_input').blur();
+                event.preventDefault();
+               }
+
           });
 
           $('.selecctBtn').selectmenu({

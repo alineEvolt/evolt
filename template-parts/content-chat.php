@@ -2,7 +2,7 @@
 
 		<?php
 		$postID = $post->ID;
-		$avatar = get_field('avatar_contact', 'option');
+		$avatar = get_field('avatar_contact', pll_current_language('slug'));
 		$avatarUrl = $avatar['url'];
 
 		$rowsFlex = get_field('scenario_next_choice');
@@ -20,7 +20,7 @@
 			    		<?php if ( !$countBulles ) { ?>
 			    		<div class="chat_list_item chat_list_item_new" data-update="question">
 		    				<a href="#" target="_blank">
-		    					<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" />
+		    					<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" data-rjs="3" />
 		    				</a>
 			    			<?php } else { ?>
 			    		<div class="chat_list_item" data-update="question">
@@ -115,7 +115,7 @@
 														if ( !$countBulles ) { ?>
 													    <div class="chat_list_item chat_list_item_new seqItem" data-update="question">
 												    		<a href="#" target="_blank">
-												    			<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" />
+												    			<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" data-rjs="3" />
 												    		</a>
 													  <?php } else { ?>
 													    <div class="chat_list_item seqItem" data-update="question">
@@ -190,7 +190,7 @@
 
 										    			<div class="chat_list_item chat_list_item_new" data-update="question">
 										    				<a href="#" target="_blank">
-										    					<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" />
+										    					<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" data-rjs="3" />
 										    				</a>
 											    			<div class="chat_bubble">
 											    				<span><?php the_sub_field('ajout_input_text_bulle_2_next'); ?></span>
@@ -203,8 +203,8 @@
 															<div class="chat_response">
 											        	<div class="input_text btn_chat">
 
-											        		<input type="text" class="input_text_text" placeholder="<?php echo __('Write a message...', 'evolt'); ?>" />
-											        			<a href="#" class="submit_input"><?php echo __('Send', 'evolt'); ?></a>
+											        		<input type="text" class="input_text_text" placeholder="<?php echo pll__('Write a message...'); ?>" />
+											        			<a href="#" class="submit_input"><?php echo pll__('Send'); ?></a>
 
 											        	</div>
 															</div>
@@ -257,7 +257,7 @@
 									            		if( $picto ) { ?>
 
 									            			<div class="picto">
-									            				<img src="<?php the_sub_field('btn_picto_incr'); ?>" alt="" />
+									            				<img src="<?php the_sub_field('btn_picto_incr'); ?>" alt="" data-rjs="3" />
 									            			</div>
 									            	<?php }
 									            	?>
@@ -272,7 +272,7 @@
 
 													echo '</div></div>';
 													echo '<div class="submit clearfix">';
-									        echo 	'<a href="#" class="increment">' .  __('Send', 'evolt') . '</a>';
+									        echo 	'<a href="#" class="increment">' .  pll__('Send') . '</a>';
 													echo '</div>';
 									        echo '</div>';
 									        echo '</div>';
@@ -329,8 +329,8 @@
 												  echo '<div class="chat_response">';
 							        		echo '<div class="input_text btn_chat">';
 
-							        		echo '<input type="text" class="input_text_text" placeholder="' . __('Write a message...', 'evolt') . '" />';
-							        		echo '<a href="#" class="submit_input">' . __('Send', 'evolt') . '</a>';
+							        		echo '<input type="text" class="input_text_text" placeholder="' . pll__('Write a message...') . '" />';
+							        		echo '<a href="#" class="submit_input">' . pll__('Send') . '</a>';
 
 
 							        		echo '</div>';
@@ -351,8 +351,8 @@
 												  echo '<div class="chat_response">';
 							        		echo '<div class="input_textarea btn_chat">';
 
-							        		echo '<textarea rows="5" cols="50" class="input_text_textarea" placeholder="' . __('Write a message...', 'evolt') . '"></textarea>';
-							        		echo '<a href="#" class="submit_input">' . __('Send', 'evolt') . '</a>';
+							        		echo '<textarea rows="5" cols="50" class="input_text_textarea" placeholder="' . pll__('Write a message...') . '"></textarea>';
+							        		echo '<a href="#" class="submit_input">' . pll__('Send') . '</a>';
 
 
 							        		echo '</div>';
@@ -379,7 +379,7 @@
 
 				    			<div class="chat_list_item chat_list_item_new" data-update="question">
 				    				<a href="#" target="_blank">
-				    					<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" />
+				    					<img class="avatar" src="<?php echo $avatarUrl; ?>" height="30" width="30" data-rjs="3" />
 				    				</a>
 					    			<div class="chat_bubble">
 					    				<span><?php the_sub_field('ajout_input_text_bulle_2'); ?></span>
@@ -392,8 +392,8 @@
 									<div class="chat_response">
 					        	<div class="input_text btn_chat">
 
-					        		<input type="text" class="input_text_text" placeholder="<?php echo __('Write a message...', 'evolt'); ?>" />
-					        			<a href="#" class="submit_input"><?php echo __('Send', 'evolt'); ?></a>
+					        		<input type="text" class="input_text_text" placeholder="<?php echo pll__('Write a message...'); ?>" />
+					        			<a href="#" class="submit_input"><?php echo pll__('Send'); ?></a>
 
 					        	</div>
 									</div>
@@ -450,7 +450,7 @@
 		            		if( $picto ) { ?>
 
 		            			<div class="picto">
-		            				<img src="<?php the_sub_field('btn_picto_incr'); ?>" alt="" />
+		            				<img src="<?php the_sub_field('btn_picto_incr'); ?>" alt="" data-rjs="3" />
 		            			</div>
 		            	<?php }
 		            	?>
@@ -464,7 +464,7 @@
 
 						echo '</div></div>';
 						echo '<div class="submit clearfix">';
-		        echo 	'<a href="#" class="increment">' . __('Send', 'evolt') . '</a>';
+		        echo 	'<a href="#" class="increment">' . pll__('Send') . '</a>';
 						echo '</div>';
 		        echo '</div>';
 		        echo '</div>';
@@ -520,8 +520,8 @@
 					  echo '<div class="chat_response">';
         		echo '<div class="input_text btn_chat">';
 
-        		echo '<input type="text" class="input_text_text" placeholder="' . __('Write a message...', 'evolt') . '" />';
-        		echo '<a href="#" class="submit_input">' . __('Send', 'evolt') . '</a>';
+        		echo '<input type="text" class="input_text_text" placeholder="' . pll__('Write a message...') . '" />';
+        		echo '<a href="#" class="submit_input">' . pll__('Send') . '</a>';
 
         		echo '</div>';
 						echo '</div>';
@@ -540,8 +540,8 @@
 					  echo '<div class="chat_response">';
         		echo '<div class="input_textarea btn_chat">';
 
-        		echo '<textarea rows="5" cols="50" class="input_text_textarea" placeholder="' . __('Write a message...', 'evolt') . '"></textarea>';
-        		echo '<a href="#" class="submit_input">' . __('Send', 'evolt') . '</a>';
+        		echo '<textarea rows="5" cols="50" class="input_text_textarea" placeholder="' . pll__('Write a message...') . '"></textarea>';
+        		echo '<a href="#" class="submit_input">' . pll__('Send') . '</a>';
 
 
         		echo '</div>';

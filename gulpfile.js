@@ -15,12 +15,12 @@ var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
 
 
-// Development Tasks 
+// Development Tasks
 // -----------------
 
 // Start browserSync server
 gulp.task('browserSync', function() {
-  browserSync({    
+  browserSync({
     proxy: {
       target: 'http://localhost:8888/EVOLT/wordpress/'
     }
@@ -53,6 +53,20 @@ return gulp.src('app/js/vendor/*.js')
 
 });
 
+//Chat js
+gulp.task('chatjs', function() {
+return gulp.src('app/chat/chat.js')
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(rename('chat.min.js'))
+    .pipe(gulp.dest('dist/chat'));
+});
+
+// Copying fonts
+gulp.task('fonts', function() {
+  return gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
+})
+
 // Watchers
 gulp.task('watch', function() {
   gulp.watch('app/scss/**/*.scss', ['sass']);
@@ -61,10 +75,10 @@ gulp.task('watch', function() {
   gulp.watch('app/js/main.js', ['jsuse']);
 })
 
-// Optimization Tasks 
+// Optimization Tasks
 // ------------------
 
-// Optimizing CSS and JavaScript 
+// Optimizing CSS and JavaScript
 gulp.task('useref', function() {
 
   return gulp.src('app/*.html')
@@ -74,7 +88,7 @@ gulp.task('useref', function() {
     .pipe(gulp.dest('dist'));
 });
 
-// Optimizing Images 
+// Optimizing Images
 gulp.task('images', function() {
   return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
     // Caching images that ran through imagemin
@@ -84,18 +98,16 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/images'))
 });
 
-// Optimizing Images jQueryui 
+// Optimizing Images jQueryui
 gulp.task('imagesUI', function() {
   return gulp.src('app/css/images/**/*.+(png|jpg|jpeg|gif|svg)')
     // Caching images that ran through imagemin
-    .pipe(cache(imagemin({
-      interlaced: true,
-    })))
+    .pipe(cache(imagemin()))
     .pipe(gulp.dest('dist/css/images'))
 });
 
 
-// Cleaning 
+// Cleaning
 gulp.task('clean', function() {
   return del.sync('dist').then(function(cb) {
     return cache.clearAll(cb);
@@ -110,7 +122,7 @@ gulp.task('clean:dist', function() {
 // ---------------
 
 gulp.task('default', function(callback) {
-  runSequence(['sass', 'vendorjs', 'jsuse', 'browserSync', 'watch'],
+  runSequence(['sass', 'vendorjs', 'jsuse', 'chatjs', 'browserSync', 'watch'],
     callback
   )
 })
@@ -119,7 +131,7 @@ gulp.task('build', function(callback) {
   runSequence(
     'clean:dist',
     'sass',
-    ['vendorjs', 'useref', 'images', 'imagesUI'],
+    ['vendorjs', 'useref', 'chatjs', 'images', 'fonts', 'imagesUI'],
     callback
   )
 })
